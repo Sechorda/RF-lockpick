@@ -17,8 +17,8 @@ RF-Lockpick is a web-UI wrapper for popular 802.11, Bluetooth/BLE, and cellular 
 # Built With
 
 ### Core Tools
-[Bluetoolkit](https://github.com/Sechorda/Bluetoolkit)  
-[hxcdumptools](https://github.com/Sechorda/hxcdumptools)  
+[Bluetoolkit](https://github.com/sgxgsx/BlueToolkit)  
+[hxcdumptools](https://github.com/ZerBea/hcxdumptool)  
 [Wifite2](https://github.com/derv82/wifite2)  
 [Kismet](https://www.kismetwireless.net/)  
 [aircrack-ng suite](https://www.aircrack-ng.org/)  
