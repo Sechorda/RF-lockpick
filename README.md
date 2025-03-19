@@ -1,7 +1,7 @@
 <div align="center">
   <h1><strong>RF-Lockpick</strong></h1>
   <p>
-    <a href="https://github.com/Sechorda/RF-Lockpick/blob/main/LICENSE">
+    <a href="https://github.com/Sechorda/RF-lockpick/blob/main/LICENSE">
       <img alt="License" src="https://img.shields.io/github/license/Sechorda/RF-Lockpick">
     </a>
   </p>
