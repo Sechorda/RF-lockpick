@@ -8,10 +8,6 @@
 </div>
 <div align="center">
 
-# Summary
-
-RF-Lockpick is a web-UI wrapper for popular 802.11, Bluetooth/BLE, and cellular pentesting tools. This tool aims to provide detailed visualization of the surrounding RF landscape while maintaining the minimal simplicity principles of secOS.
-
 ---
 
 # Built With
