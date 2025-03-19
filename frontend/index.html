@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Visualization</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/controls.css">
+    <link rel="stylesheet" href="css/list-table.css">
+    <link rel="stylesheet" href="css/device-labels.css">
+    <link rel="stylesheet" href="css/vulnerability-scan.css">
+    <link rel="stylesheet" href="css/create-ap.css">
+    <link rel="stylesheet" href="css/bluetooth.css">
+    <link rel="stylesheet" href="css/probe-request.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div id="controls">
+        <div class="settings-container">
+            <button id="settings-toggle">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M15.95 10.78c.03-.25.05-.51.05-.78s-.02-.53-.06-.78l1.69-1.32c.15-.12.19-.34.1-.51l-1.6-2.77c-.1-.18-.31-.24-.49-.18l-1.99.8c-.42-.32-.86-.58-1.35-.78L12 2.34c-.03-.2-.2-.34-.4-.34H8.4c-.2 0-.36.14-.39.34l-.3 2.12c-.49.2-.94.47-1.35.78l-1.99-.8c-.18-.07-.39 0-.49.18l-1.6 2.77c-.1.18-.06.39.1.51l1.69 1.32c-.04.25-.07.52-.07.78s.02.53.06.78L2.37 12.1c-.15.12-.19.34-.1.51l1.6 2.77c.1.18.31.24.49.18l1.99-.8c.42.32.86.58 1.35.78l.3 2.12c.04.2.2.34.4.34h3.2c.2 0 .37-.14.39-.34l.3-2.12c.49-.2.94-.47 1.35-.78l1.99.8c.18.07.39 0 .49-.18l1.6-2.77c.1-.18.06-.39-.1-.51l-1.67-1.32zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"/>
+                </svg>
+            </button>
+            <div class="settings-dropdown">
+                <div class="interface-select">
+                    <label>LAN:</label>
+                    <select class="interface-dropdown" data-tool="lan"></select>
+                </div>
+                <div class="interface-select">
+                    <label>Bluetooth:</label>
+                    <select class="interface-dropdown" data-tool="bluetooth"></select>
+                </div>
+                <div class="interface-select">
+                    <label>hostapd:</label>
+                    <select class="interface-dropdown" data-tool="hostapd"></select>
+                </div>
+                <div class="interface-select">
+                    <label>Kismet:</label>
+                    <select class="interface-dropdown" data-tool="kismet"></select>
+                </div>
+            </div>
+        </div>
+        <div class="connection-menu">
+            <div class="connection-container">
+                <button class="connection-button" title="WiFi">
+                    <i class="fa-solid fa-wifi"></i>
+                </button>
+                <button class="connection-button" title="Bluetooth">
+                    <i class="fa-brands fa-bluetooth-b"></i>
+                </button>
+                <button class="connection-button" title="Cellular">
+                    <i class="fa-solid fa-signal"></i>
+                </button>
+            </div>
+        </div>
+        <button id="hide-empty-toggle">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486z"/>
+                <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829z"/>
+                <path d="M6.586 9.17a2.5 2.5 0 0 1-3.172-3.172l3.172 3.172zm4.907-4.907-4.907 4.907-1.414-1.414 4.907-4.907z"/>
+                <path d="M2.354 5.646a3.5 3.5 0 0 0 4.793 4.793L2.354 5.646z"/>
+                <path d="m1.146 4.232 9 9 1.414-1.414-9-9z"/>
+            </svg>
+        </button>
+        <button id="tree-toggle">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                <circle cx="8" cy="3" r="2"/>
+                <circle cx="8" cy="8" r="2"/>
+                <circle cx="8" cy="13" r="2"/>
+            </svg>
+        </button>
+        <button id="view-toggle">List view</button>
+        <div class="control-divider"></div>
+        <button id="karma-toggle">KARMA</button>
+    </div>
+    <div id="canvas-container"></div>
+    <div id="blade-container"></div>
+    <div id="probequest-container" style="display: none;"></div>
+    <div id="toast" class="toast"></div>
+
+    <!-- Load Three.js and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
+    <!-- Load application module -->
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+/hs
+cracked.txt
+/tmp_*
+__pycache__/
+**/__pycache__/
+*.pyc
+network_security_cache.*

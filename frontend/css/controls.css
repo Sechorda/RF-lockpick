@@ -1,0 +1,502 @@
+/* Existing controls.css content */
+#controls {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: var(--header-height);
+    top: 0;
+    left: 0;
+    background: rgba(30, 30, 30, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.connection-menu {
+    margin-right: 20px;
+}
+
+.connection-container {
+    display: flex;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.connection-button {
+    background: linear-gradient(145deg, rgba(0, 102, 255, 0.9), rgba(0, 153, 255, 0.9));
+    border: none;
+    padding: 10px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-weight: 500;
+}
+
+.connection-button:hover {
+    background: linear-gradient(145deg, rgba(0, 102, 255, 1), rgba(0, 153, 255, 1));
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.connection-button i {
+    font-size: 1.2em;
+    transition: transform 0.2s ease;
+}
+
+.connection-button:hover i {
+    transform: scale(1.1);
+}
+
+/* New connection menu styles */
+.connection-menu {
+    margin-right: 20px;
+}
+
+.connection-container {
+    display: flex;
+    gap: 12px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.connection-button {
+    background: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.connection-button:hover {
+    background: var(--card-hover);
+}
+
+.connection-button svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-primary);
+    transition: fill 0.2s ease;
+}
+
+.connection-button:hover svg {
+    fill: var(--primary-color);
+}
+
+/* Rest of existing controls.css content */
+.settings-container {
+    position: relative;
+    margin-right: 20px;
+    z-index: 9999;
+}
+
+.connection-menu {
+    margin-right: 20px;
+}
+
+.connection-container {
+    display: flex;
+    gap: 12px;
+}
+
+.connection-button {
+    background: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    position: relative;
+}
+
+.connection-button:hover {
+    background: var(--card-bg);
+}
+
+.connection-button.active {
+    background: var(--card-bg);
+    color: var(--primary-color);
+}
+
+.connection-button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background: var(--primary-color);
+    border-radius: 1px;
+}
+
+.connection-button i {
+    font-size: 1.2em;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.connection-button .fa-brands {
+    font-size: 1.3em;
+}
+
+.settings-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: none;
+    min-width: 200px;
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+.settings-dropdown.visible {
+    display: block;
+}
+
+.interface-select {
+    margin-bottom: 8px;
+}
+
+.interface-select:last-child {
+    margin-bottom: 0;
+}
+
+.interface-select label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    margin-bottom: 4px;
+}
+
+.interface-dropdown {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 6px 8px 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.interface-dropdown option {
+    background: var(--surface-color);
+    color: var(--text-primary);
+}
+
+.interface-dropdown option:disabled {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.interface-dropdown:hover {
+    background: var(--card-hover);
+    border-color: var(--primary-color);
+}
+
+#settings-toggle {
+    background: transparent;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#settings-toggle:hover {
+    background: var(--card-bg);
+}
+
+#settings-toggle svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--text-primary);
+}
+
+#view-toggle {
+    position: relative;
+    pointer-events: auto;
+    margin-right: 20px;
+    background: rgba(0, 102, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 102, 255, 0.2);
+    border-radius: 12px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 102, 255, 0.1);
+}
+
+#view-toggle:hover {
+    background: rgba(0, 102, 255, 0.15);
+    border-color: rgba(0, 102, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0, 102, 255, 0.15);
+}
+
+#view-toggle.active {
+    background: rgba(0, 102, 255, 0.25);
+    border-color: rgba(0, 102, 255, 0.5);
+    box-shadow: inset 0 2px 4px rgba(0, 102, 255, 0.1);
+}
+
+#tree-toggle, #hide-empty-toggle {
+    position: relative;
+    pointer-events: auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 102, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 102, 255, 0.2);
+    border-radius: 12px;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 102, 255, 0.1);
+    margin-right: 20px;
+}
+
+#karma-toggle {
+    position: relative;
+    pointer-events: auto;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 102, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 102, 255, 0.2);
+    border-radius: 12px;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 102, 255, 0.1);
+}
+
+#tree-toggle svg circle {
+    transition: fill 0.2s ease;
+}
+
+#tree-toggle:hover svg circle {
+    fill: rgba(0, 102, 255, 0.8);
+}
+
+#tree-toggle.active svg circle {
+    fill: rgba(0, 102, 255, 1);
+}
+
+#hide-empty-toggle {
+    transition: all 0.2s ease;
+}
+
+#hide-empty-toggle svg {
+    transition: all 0.2s ease;
+}
+
+#hide-empty-toggle:not(.active):hover {
+    background: rgba(0, 102, 255, 0.15);
+    border-color: rgba(0, 102, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0, 102, 255, 0.15);
+    color: var(--primary-color);
+}
+
+#hide-empty-toggle:not(.active):hover svg {
+    fill: var(--primary-color);
+}
+
+#hide-empty-toggle:not(.active):hover path {
+    fill: var(--primary-color);
+}
+
+#hide-empty-toggle.active {
+    background: rgba(0, 102, 255, 0.3);
+    border-color: rgba(0, 102, 255, 0.6);
+    box-shadow: inset 0 2px 4px rgba(0, 102, 255, 0.2);
+    transform: translateY(1px);
+    color: var(--primary-color) !important;
+}
+
+#hide-empty-toggle.active svg,
+#hide-empty-toggle.active path {
+    fill: var(--primary-color) !important;
+}
+
+#tree-toggle:hover, #karma-toggle:hover {
+    background: rgba(0, 102, 255, 0.15);
+    border-color: rgba(0, 102, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0, 102, 255, 0.15);
+}
+
+#tree-toggle.active, #karma-toggle.active {
+    background: rgba(0, 102, 255, 0.3);
+    border-color: rgba(0, 102, 255, 0.6);
+    box-shadow: inset 0 2px 4px rgba(0, 102, 255, 0.2);
+    color: var(--primary-color);
+    transform: translateY(1px);
+}
+
+#search-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-bg);
+    padding: 8px 12px;
+    border-radius: 12px;
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#search-container:focus-within {
+    transform: translateX(-50%) scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#search-container i {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+#search-container:focus-within i {
+    color: var(--primary-color);
+}
+
+#search-input {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    padding: 6px 8px;
+    margin-left: 17px;
+    outline: none;
+    width: 80px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+#search-input:focus {
+    width: 200px;
+}
+
+#search-input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(0, 102, 255, 0.6);
+}
+
+#search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+button.active {
+    background: #00cc00;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(1px);
+}
+
+/* Vertical divider for controls */
+.control-divider {
+    height: 60%;
+    width: 1px;
+    margin: 0 15px;
+    background: rgba(255, 255, 255, 0.1);
+    align-self: center;
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+/* Control button styles (shared between hide-empty-toggle and refresh button) */
+.control-button {
+    position: relative;
+    pointer-events: auto;
+    padding: 10px 16px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 102, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 102, 255, 0.2);
+    border-radius: 12px;
+    color: var(--text-primary);
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 102, 255, 0.1);
+}
+
+.control-button:hover {
+    background: rgba(0, 102, 255, 0.15);
+    border-color: rgba(0, 102, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px rgba(0, 102, 255, 0.15);
+}
+
+.control-button i {
+    font-size: 16px;
+}
+
+/* Refresh button styling */
+#bluetooth-refresh {
+    margin-right: 20px;
+}

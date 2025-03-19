@@ -1,0 +1,476 @@
+/* Label container styles */
+.label-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Stop button styles */
+.evil-twin-stop-button {
+    margin-left: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.device-label {
+    position: absolute;
+    pointer-events: auto;
+    user-select: none;
+    transform-origin: left top;
+}
+
+/* Evil Twin AP styling */
+.device-label[data-evil-twin="true"] .basic-label {
+    background: rgba(139, 0, 0, 0.9);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+/* Offline Evil Twin AP styling */
+.device-label[data-evil-twin="true"][data-evil-twin-offline="true"] .basic-label {
+    background: rgba(128, 128, 128, 0.9);
+    border: 1px solid rgba(169, 169, 169, 0.3);
+    box-shadow: 0 0 10px rgba(169, 169, 169, 0.2);
+}
+
+.device-label[data-evil-twin="true"] .details-panel {
+    background: rgba(139, 0, 0, 0.85);
+    border-color: rgba(255, 0, 0, 0.3);
+}
+
+.basic-label {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* Only apply max-width to client nodes */
+.device-label[data-client="true"] .basic-label {
+    max-width: 200px;
+}
+
+/* Only truncate manufacturer names for client nodes */
+.device-label .manufacturer {
+    overflow: visible;
+}
+
+/* Client node specific truncation */
+.device-label[data-client="true"] .manufacturer {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.expand-indicator {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2em;
+    transition: transform 0.2s;
+}
+
+.device-label.expanded .expand-indicator {
+    transform: rotate(90deg);
+}
+
+.details-panel {
+    display: none;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-top: 8px;
+    padding: 16px;
+    font-size: 0.9em;
+    min-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.2s ease-out;
+    backdrop-filter: blur(5px);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.device-label.expanded .details-panel {
+    display: block;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    color: white;
+}
+
+.detail-key {
+    color: rgba(255, 255, 255, 0.6);
+    margin-right: 10px;
+}
+
+.detail-value {
+    text-align: right;
+}
+
+.security-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.security-tag {
+    background: rgba(37, 99, 235, 0.1);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    color: var(--text-primary);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8em;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.security-tag::before {
+    content: '🔒';
+    font-size: 0.9em;
+}
+
+.encryption-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.encryption-type {
+    background: rgba(255, 165, 0, 0.2);
+    border: 1px solid rgba(255, 165, 0, 0.4);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    display: inline-block;
+}
+
+.signal-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.signal-bars {
+    display: flex;
+    gap: 2px;
+}
+
+.signal-bar {
+    width: 3px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1px;
+}
+
+.signal-bar.active {
+    background: #00ff00;
+}
+
+.client-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.client-indicator.connected {
+    background: #00ff00;
+}
+
+.client-indicator.disconnected {
+    background: #ff4444;
+}
+
+.detail-section {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+.detail-section:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.detail-section-title {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.packet-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.packet-stat {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 6px 8px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.packet-stat-label {
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.packet-stat-value {
+    font-size: 1em;
+    color: white;
+    margin-top: 2px;
+}
+
+.network-stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    margin-top: 4px;
+}
+
+.network-stat-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9em;
+}
+
+.network-stat-value {
+    color: white;
+    font-family: monospace;
+}
+
+.capability-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.85em;
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    color: #00ff00;
+}
+
+.capability-indicator.disabled {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: rgba(255, 0, 0, 0.3);
+    color: #ff4444;
+}
+
+.audit-section {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+.audit-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: linear-gradient(45deg, #2563eb, #1d4ed8);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.audit-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background: linear-gradient(45deg, #1d4ed8, #1e40af);
+}
+
+.audit-button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.psk-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    padding: 8px 0;
+    color: white;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.psk-value {
+    font-family: monospace;
+    color: white;
+    cursor: pointer;
+    text-align: right;
+}
+
+.psk-value.empty {
+    color: #ff4444;
+    cursor: default;
+}
+
+/* Evil Twin button styles */
+.device-label .evil-twin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+    gap: 8px;
+}
+
+.device-label .evil-twin-container .band-selection-buttons {
+    display: none;
+    margin-top: 5px;
+    gap: 5px;
+    width: 100%;
+    justify-content: center;
+}
+
+.device-label .evil-twin-container .band-selection-buttons[data-default-display="flex"] {
+    display: flex;
+}
+
+.device-label .evil-twin-container .band-selection-buttons button {
+    flex: 1;
+    max-width: 160px;
+}
+
+.device-label .evil-twin-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(45deg, #1565C0, #0D47A1);
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    min-width: 160px;
+}
+
+.device-label .evil-twin-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.device-label .evil-twin-button:active {
+    transform: translateY(0);
+}
+
+.device-label .evil-twin-button.running {
+    background: linear-gradient(45deg, #2E7D32, #1B5E20);
+    cursor: not-allowed;
+}
+
+.device-label .evil-twin-button.creating {
+    background: linear-gradient(45deg, #0277BD, #01579B);
+    cursor: not-allowed;
+}
+
+.device-label .stop-button {
+    padding: 8px 16px;
+    background: linear-gradient(45deg, #dc3545, #c82333);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    width: auto;
+    min-width: 160px;
+}
+
+/* Deauth Button Styles */
+.device-label .deauth-button {
+    width: auto;
+    padding: 6px 12px;
+    margin-top: 8px;
+    background: linear-gradient(45deg, #dc3545, #c82333);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85em;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+.device-label .deauth-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background: linear-gradient(45deg, #c82333, #b21f2d);
+}
+
+.device-label .deauth-button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.device-label .deauth-button i {
+    margin-right: 0;
+    font-size: 1.1em;
+}
+
+.device-label .deauth-button.running {
+    cursor: not-allowed;
+    opacity: 0.8;
+    background: linear-gradient(45deg, #6c757d, #5a6268);
+}

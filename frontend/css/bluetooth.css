@@ -1,0 +1,344 @@
+.bluetooth-view .network-cell:nth-child(2) {
+    color: rgb(0, 180, 255);
+    text-shadow: 0 0 10px rgba(0, 180, 255, 0.3);
+}
+
+.bluetooth-view .network-cell:nth-child(3) {
+    color: rgb(0, 200, 100);
+    text-shadow: 0 0 10px rgba(0, 200, 100, 0.3);
+}
+
+.bluetooth-view .network-cell:nth-child(4) {
+    color: rgb(255, 140, 0);
+    text-shadow: 0 0 10px rgba(255, 140, 0, 0.3);
+}
+
+.bluetooth-view .detail-section {
+    background: rgba(30, 30, 40, 0.7);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bluetooth-view .detail-section h4 {
+    color: var(--text-primary);
+    margin: 0 0 12px 0;
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.bluetooth-view .detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bluetooth-view .detail-list li {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(50, 50, 70, 0.5);
+    margin-bottom: 4px;
+    border-radius: 4px;
+}
+
+.bluetooth-view .detail-list li:last-child {
+    border-bottom: none;
+}
+
+.bluetooth-view .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 20px 0;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bluetooth-view .button-divider {
+    height: 24px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.bluetooth-view .detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.bluetooth-view .button-container button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background: linear-gradient(to bottom, rgba(0, 102, 255, 0.8), rgba(0, 82, 204, 0.8));
+    border: 1px solid rgba(0, 122, 255, 0.6);
+    color: white;
+    font-size: 0.95em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bluetooth-view .button-container button:hover {
+    background: linear-gradient(to bottom, rgba(0, 122, 255, 0.9), rgba(0, 102, 204, 0.9));
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.bluetooth-view .button-container button:active {
+    transform: translateY(1px);
+}
+
+.bluetooth-view .button-container button i {
+    font-size: 1.1em;
+}
+
+.bluetooth-view .recon-data {
+    max-height: 300px;
+    overflow-y: auto;
+    transition: max-height 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    background: rgba(30, 30, 40, 0.5);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.bluetooth-view .recon-data.minimized {
+    max-height: 150px;
+}
+
+.bluetooth-view .recon-data::-webkit-scrollbar {
+    width: 8px;
+}
+
+.bluetooth-view .recon-data::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.bluetooth-view .recon-data::-webkit-scrollbar-thumb {
+    background: rgba(0, 102, 255, 0.5);
+    border-radius: 4px;
+}
+
+.bluetooth-view .recon-data::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 102, 255, 0.7);
+}
+
+.bluetooth-view .expand-recon {
+    margin-top: 8px;
+    width: 100%;
+    padding: 8px;
+    background: rgba(0, 102, 255, 0.2);
+    border: 1px solid rgba(0, 102, 255, 0.4);
+    color: white;
+    font-size: 0.9em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.bluetooth-view .expand-recon:hover {
+    background: rgba(0, 102, 255, 0.3);
+}
+
+.bluetooth-view .network-blade {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    margin: 4px 0;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.bluetooth-view .network-cell-container {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 12px 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bluetooth-view .network-cell {
+    padding: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bluetooth-view .network-cell:first-child {
+    text-align: left;
+    padding-left: 24px;
+}
+
+.bluetooth-view .details-panel {
+    display: none;
+    width: 100%;
+    grid-column: 1 / -1;
+}
+
+.bluetooth-view .network-blade.expanded {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom,
+        rgba(0, 102, 255, 0.15),
+        rgba(0, 102, 255, 0.05));
+    border: 1px solid rgba(0, 102, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.bluetooth-view .network-blade.expanded .details-panel {
+    display: block;
+    opacity: 1;
+    margin-top: 16px;
+    padding: 16px;
+    width: 100%;
+}
+
+.bluetooth-view .recon-button {
+    display: inline-flex;
+}
+
+.bluetooth-view .detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 14px;
+    background: rgba(50, 50, 70, 0.5);
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.bluetooth-view .detail-item .label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95em;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+}
+
+.bluetooth-view .detail-item .value {
+    color: white;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.95em;
+    max-width: 60%;
+    text-align: right;
+    word-break: break-all;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bluetooth-view .recon-item {
+    margin-bottom: 12px;
+    background: rgba(50, 50, 70, 0.5);
+    border-radius: 6px;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bluetooth-view .recon-item h5 {
+    margin: 0 0 8px 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.bluetooth-view .recon-item pre {
+    margin: 0;
+    padding: 10px;
+    background: rgba(30, 30, 40, 0.8);
+    border-radius: 4px;
+    color: white;
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 0.9em;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.bluetooth-view .recon-item pre::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.bluetooth-view .recon-item pre::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.bluetooth-view .recon-item pre::-webkit-scrollbar-thumb {
+    background: rgba(0, 102, 255, 0.5);
+    border-radius: 4px;
+}
+
+.bluetooth-view .recon-item pre::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 102, 255, 0.7);
+}
+
+/* Vulnerability report styling */
+.bluetooth-view .vulnerability-report {
+    background: rgba(40, 30, 40, 0.7);
+    border: 1px solid rgba(255, 100, 100, 0.2);
+}
+
+.bluetooth-view .detail-subsection {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bluetooth-view .detail-subsection h5 {
+    color: rgba(255, 100, 100, 0.9);
+    margin: 0 0 10px 0;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.bluetooth-view .detail-item.vulnerability {
+    background: rgba(60, 30, 40, 0.5);
+    border: 1px solid rgba(255, 100, 100, 0.2);
+}
+
+.bluetooth-view .detail-item.vulnerability .label {
+    color: rgba(255, 150, 150, 0.9);
+}
+
+.bluetooth-view .detail-item.error {
+    background: rgba(60, 30, 40, 0.5);
+    border: 1px solid rgba(255, 100, 100, 0.3);
+}
+
+.bluetooth-view .detail-item.error .value {
+    color: rgba(255, 150, 150, 0.9);
+    text-align: center;
+    width: 100%;
+    background: transparent;
+    border: none;
+}
