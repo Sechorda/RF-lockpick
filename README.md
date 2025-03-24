@@ -14,7 +14,7 @@
 
 ### Core Tools
 [Bluetoolkit](https://github.com/sgxgsx/BlueToolkit)  
-[hxcdumptools](https://github.com/ZerBea/hcxdumptool)  
+[hcxdumptools](https://github.com/ZerBea/hcxdumptool)  
 [Wifite2](https://github.com/derv82/wifite2)  
 [Kismet](https://www.kismetwireless.net/)  
 [aircrack-ng suite](https://www.aircrack-ng.org/)  
