@@ -62,18 +62,20 @@ def start_kismet() -> bool:
         subprocess.run(['sudo', 'killall', 'kismet'], stderr=subprocess.DEVNULL)
         time.sleep(2)  # Give kismet time to cleanup
             
-        # Get available wifi interfaces
+        # Get available interfaces
         interfaces = get_interfaces()
         if not interfaces['wifi']:
-            logging.error("No WiFi interfaces available")
-            return False
-            
-        # Use first available interface
-        interface = interfaces['wifi'][0]
+            logging.warning("No WiFi interfaces available")
+            interface = None
+        else:
+            # Use first available WiFi interface
+            interface = interfaces['wifi'][0]
         
-        # Start kismet with interface (it will handle monitor mode)
-        subprocess.Popen(['sudo', 'kismet', '-c', interface, '--no-logging'], 
-                        stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        # Start kismet (with interface if available)
+        cmd = ['sudo', 'kismet', '--no-logging']
+        if interface:
+            cmd.extend(['-c', interface])
+        subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
                         
         return wait_for_kismet()
     except Exception as e:
