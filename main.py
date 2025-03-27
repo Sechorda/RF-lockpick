@@ -15,7 +15,7 @@ def main():
     # Start kismet and wait for it to be ready
     if not start_kismet() or not wait_for_kismet():
         return
-    app.run(host='0.0.0.0', port=8080, debug=False)
+    app.run(host='0.0.0.0', port=8005, debug=False)
 
 if __name__ == "__main__":
     main()
