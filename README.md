@@ -32,6 +32,42 @@
 
 ---
 
+## Installation & Usage
+
+### Installation
+```bash
+# Run the install script
+sudo ./install.sh
+```
+
+### Usage
+
+```bash
+# Start the server
+rf
+
+# Stop the server
+rf stop
+
+# Show help
+rf -h
+```
+
+Example output:
+```
+$ rf -h
+Usage: rf [option]
+Options:
+  (no option)   Start RF-Lockpick server
+  stop          Stop running RF-Lockpick server
+  -h, --help    Show this help message
+
+Server runs on http://localhost:8005
+```
+
+---
+
+
 # Features
 
 ## WiFi View
