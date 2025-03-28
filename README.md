@@ -34,27 +34,17 @@
 
 ## Installation & Usage
 
-Installation & Usage
-Installation
-Simply run the install script with sudo privileges:
-bashCopysudo ./install.sh
-Usage
-RF-Lockpick provides a simple command-line interface:
-bashCopy# Start the server
-rf
+### Installation
+```bash
+sudo ./install.sh 
+```
 
-# Stop the server
-rf stop
-
-# Show help
-rf -h
-Help Output
-When you run rf -h, you'll see:
-CopyUsage: rf [option]
-Options:
-  (no option)   Start RF-Lockpick server
-  stop          Stop running RF-Lockpick server
-  -h, --help    Show this help message
+### Usage
+```bash
+rf          # Start the server
+rf stop     # Stop the server
+rf -h       # Show help
+```
 
 Server runs on http://localhost:8005
 
