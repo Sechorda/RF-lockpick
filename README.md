@@ -35,19 +35,26 @@
 ## Installation & Usage
 
 ### Installation
+Run the install script:
 ```bash
-sudo ./install.sh  # Run the install script
+sudo ./install.sh
 ```
 
 ### Usage
+Basic commands:
 ```bash
-rf          # Start the server
-rf stop     # Stop the server
-rf -h       # Show help
+# Start the server
+rf
+
+# Stop the server
+rf stop
+
+# Show help
+rf -h
 ```
 
-Example output:
-```bash
+Example help output:
+```
 $ rf -h
 Usage: rf [option]
 Options:
