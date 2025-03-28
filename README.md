@@ -36,25 +36,18 @@
 
 ### Installation
 ```bash
-# Run the install script
-sudo ./install.sh
+sudo ./install.sh  # Run the install script
 ```
 
 ### Usage
-
 ```bash
-# Start the server
-rf
-
-# Stop the server
-rf stop
-
-# Show help
-rf -h
+rf          # Start the server
+rf stop     # Stop the server
+rf -h       # Show help
 ```
 
 Example output:
-```
+```bash
 $ rf -h
 Usage: rf [option]
 Options:
